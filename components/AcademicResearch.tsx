@@ -16,8 +16,9 @@ const AcademicResearch = () => {
             Climate Change&rsquo;s Impact on Food Security
           </h3>
           <p className="text-sm opacity-75 mb-4">
-            Analyzed climate change's effects on global food security, focusing
-            on agricultural productivity and socio-economic implications.
+            Analyzed climate change&rsquo;s effects on global food security,
+            focusing on agricultural productivity and socio-economic
+            implications.
           </p>
           <a
             href="https://www.researchgate.net/publication/376077047_CLIMATE_CHANGE'S_IMPACT_ON_FOOD_SECURITY"
@@ -32,10 +33,10 @@ const AcademicResearch = () => {
         {/* Research 2 */}
         <div className="bg-gray-800 rounded-lg shadow-lg p-6 text-white">
           <h3 className="text-lg font-semibold mb-2">
-            Mustafa Akgül’s Contributions to Free Software in Turkey
+            Mustafa Akgül&rsquo;s Contributions to Free Software in Turkey
           </h3>
           <p className="text-sm opacity-75 mb-4">
-            Researched Mustafa Akgül’s role in advancing free software and
+            Researched Mustafa Akgül&rsquo;s role in advancing free software and
             internet freedom in Turkey, highlighting his pioneering efforts.
           </p>
           <a
