@@ -13,7 +13,7 @@ const AcademicResearch = () => {
         {/* Research 1 */}
         <div className="bg-gray-800 rounded-lg shadow-lg p-6 text-white">
           <h3 className="text-lg font-semibold mb-2">
-            Climate Change’s Impact on Food Security
+            Climate Change&rsquo;s Impact on Food Security
           </h3>
           <p className="text-sm opacity-75 mb-4">
             Analyzed climate change's effects on global food security, focusing
