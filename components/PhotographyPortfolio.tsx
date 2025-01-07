@@ -27,9 +27,11 @@ const PhotographyPortfolio = () => {
 
         {/* Fotoğraf Örneği 2 */}
         <div className="bg-gray-800 rounded-lg shadow-lg p-4 text-white">
-          <img
+          <Image
             src="/images/yastik.jpg"
             alt="Lüks Yastık Ürün Çekimi"
+            width={400}
+            height={300}
             className="rounded-lg mb-4 w-full h-48 object-cover"
           />
 
