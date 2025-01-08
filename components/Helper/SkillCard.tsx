@@ -13,7 +13,9 @@ const SkillCard: React.FC<Props> = ({ title, image, percent }) => {
       <Image
         src={image}
         alt={title}
-        className="w-16 h-16 object-contain mb-2"
+        width={64} // Specify appropriate width
+        height={64} // Specify appropriate height
+        className="rounded-full"
       />
       <h3 className="text-white text-lg font-semibold">{title}</h3>
       <div className="relative w-full bg-gray-600 h-2 rounded-full mt-2">

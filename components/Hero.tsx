@@ -54,7 +54,6 @@ const Hero = () => {
             className="hidden md:block"
           >
             <Image
-              fill={true}
               src="/images/hero.png"
               alt="hero"
               width={500}
