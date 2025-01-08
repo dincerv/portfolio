@@ -11,7 +11,7 @@ const Contact = () => {
       </div>
       <div className="w-[80%] mx-auto max-w-[700px]">
         <form
-          action="https://formsubmit.co/your-email@example.com" // Replace with your email
+          action="dincer.velioglu@gmail.com" // Replace with your email
           method="POST"
           className="grid gap-[1.5rem]"
         >
