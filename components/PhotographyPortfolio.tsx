@@ -14,6 +14,7 @@ const PhotographyPortfolio = () => {
         {/* Fotoğraf Örneği 1 */}
         <div className="bg-gray-800 rounded-lg shadow-lg p-4 text-white">
           <Image
+            fill={true}
             src="https://images.unsplash.com/photo-1551218808-94e220e084d2"
             alt="Restaurant Menu Photography"
             width={400}
@@ -30,6 +31,7 @@ const PhotographyPortfolio = () => {
         {/* Fotoğraf Örneği 2 */}
         <div className="bg-gray-800 rounded-lg shadow-lg p-4 text-white">
           <Image
+            fill={true}
             src="/images/yastik.jpg"
             alt="Lüks Yastık Ürün Çekimi"
             width={400}
