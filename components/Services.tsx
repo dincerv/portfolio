@@ -7,7 +7,7 @@ const Services = () => {
       <div className="text-center">
         <p className="heading__mini">Professional Expertise</p>
         <h1 className="heading__primary">
-          My Core <span className="text-yellow-300">Offerings</span>
+          <span className="text-yellow-300">Ask Me About</span>
         </h1>
       </div>
       <div className="pt-16 px-4 max-w-screen-lg mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

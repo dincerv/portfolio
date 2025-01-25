@@ -7,7 +7,6 @@ const Skills = () => {
       <div className="grid w-[80%] mx-auto grid-cols-1 lg:grid-cols-7 gap-[2rem] items-center">
         {/* Skills Introduction Section */}
         <div className="col-span-3">
-          <p className="heading__mini">My Skills</p>
           <h1 className="heading__primary">
             Explore My Popular <span className="text-yellow-300">Skills</span> &
             Expertise

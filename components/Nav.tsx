@@ -42,7 +42,7 @@ const Nav = ({ openNav }: Props) => {
           </li>
           <li>
             <a className="nav__link" href="#services">
-              Services
+              Expertise
             </a>
           </li>
           <li>

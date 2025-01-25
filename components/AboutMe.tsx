@@ -118,7 +118,7 @@ const AboutMe = () => {
             <div className="p-6 text-center bg-yellow-500 rounded-lg shadow-md hover:shadow-xl transition duration-300">
               <p className="text-[50px] text-black font-bold">2+</p>
               <p className="text-[20px] text-black font-semibold">
-                Academic Paper
+                Academic Papers
               </p>
             </div>
           </div>

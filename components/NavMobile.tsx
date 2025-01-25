@@ -44,7 +44,7 @@ const NavMobile = ({ closeNav, showNav }: Props) => {
             href="#services"
             onClick={closeNav}
           >
-            Services
+            Expertise
           </a>
         </li>
         <li>

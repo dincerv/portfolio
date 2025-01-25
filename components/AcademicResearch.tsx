@@ -6,7 +6,7 @@ const AcademicResearch = () => {
       <div className="text-center">
         <p className="heading__mini">Research & Publications</p>
         <h1 className="heading__primary">
-          My <span className="text-yellow-300">Academic Contributions</span>
+          <span className="text-yellow-300">Academic Contributions</span>
         </h1>
       </div>
       <div className="pt-[3rem] w-[80%] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-[2rem]">
@@ -26,7 +26,7 @@ const AcademicResearch = () => {
             rel="noopener noreferrer"
             className="text-yellow-300 underline"
           >
-            Read Publication
+            Read more…
           </a>
         </div>
 
@@ -45,7 +45,7 @@ const AcademicResearch = () => {
             rel="noopener noreferrer"
             className="text-yellow-300 underline"
           >
-            Read Publication
+            Read more…
           </a>
         </div>
       </div>

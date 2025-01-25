@@ -6,13 +6,13 @@ const TypeWriteEffect = () => {
     <TypeAnimation
       sequence={[
         "Frontend developer with a passion for building web applications.",
-        1000, // wait 1s before replacing the text
+        3000, // wait 1s before replacing the text
         "Focused on creating clean and efficient code.",
-        1000,
+        3000,
         "Enjoy solving problems and learning new technologies.",
-        1000,
+        3000,
         "Always eager to collaborate and grow in the tech world.",
-        1000,
+        3000,
       ]}
       wrapper="span"
       speed={50}
