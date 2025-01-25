@@ -32,7 +32,7 @@ const PhotographyPortfolio = () => {
                 src="/images/yastik.jpg"
                 alt="Luxury Pillow Product Shoot"
                 fill
-                className="object-cover rounded-lg"
+                className="object-cover rounded-lg object-[50%_60%]"
               />
             </div>
             <h3 className="text-lg font-semibold">
