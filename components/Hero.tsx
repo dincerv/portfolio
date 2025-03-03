@@ -1,6 +1,4 @@
-// Hero.js
 import React from "react";
-import TypeWriteEffect from "./Helper/TypeWriteEffect";
 import Image from "next/image";
 
 const Hero = () => {
@@ -16,18 +14,18 @@ const Hero = () => {
       id="hero"
       className="w-[100vw] pt-[4vh] md:pt-[12vh] h-[85vh] md:h-[100vh] custom-bg"
     >
-      <div className="flex justify-center flex-col w-[80%] h-[100%] mx-auto ">
+      <div className="flex justify-center flex-col w-[80%] h-[100%] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[3rem] items-center">
           <div>
-            <h1 data-aos="fade-right" className="text-[#c4cfde] mb-[1.3rem]">
-              WELCOME TO MY WORLD
-            </h1>
             <div data-aos="fade-left" data-aos-delay="400">
               <h1 className="xl:text-[50px] lg:text-[40px] sm:text-[35px] text-[25px] font-semibold leading-[2.4rem] text-white">
                 Hi, I&rsquo;m{" "}
                 <span className="text-yellow-300">Dincer Velioglu</span>
               </h1>
-              <TypeWriteEffect />
+              {/* Kayan yazı yerine sabit bir alt başlık */}
+              <h2 className="text-[#c4cfde] text-[18px] md:text-[22px] mt-2">
+                Frontend Developer & Web Enthusiast
+              </h2>
             </div>
             <p
               data-aos="fade-up"

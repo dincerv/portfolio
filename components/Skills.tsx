@@ -1,69 +1,128 @@
-import React from "react";
-import SkillCard from "./Helper/SkillCard";
+import React, { useState } from "react";
+
+const skillsData = [
+  {
+    category: "Frontend Development",
+    skills: [
+      { name: "React.js", level: "Intermediate" },
+      { name: "JavaScript", level: "Advanced" },
+      { name: "HTML & CSS", level: "Expert" },
+      { name: "Bootstrap", level: "Intermediate" },
+      { name: "TailwindCSS", level: "Intermediate" },
+    ],
+  },
+  {
+    category: "Backend & Databases",
+    skills: [
+      { name: "Node.js", level: "Intermediate" },
+      { name: "MongoDB", level: "Intermediate" },
+      { name: "MySQL", level: "Intermediate" },
+      { name: "Firebase", level: "Beginner" },
+      { name: "PHP", level: "Beginner" },
+    ],
+  },
+  /*{
+    category: "Project Management & Agile",
+    skills: [
+      { name: "Agile Methodologies", level: "Expert" },
+      { name: "Scrum", level: "Advanced" },
+      { name: "Jira", level: "Intermediate" },
+      { name: "Trello", level: "Intermediate" },
+      { name: "Monday", level: "Basic" },
+    ],
+  },*/
+  {
+    category: "Design & Prototyping",
+    skills: [
+      { name: "Figma", level: "Advanced" },
+      { name: "Adobe Photoshop", level: "Intermediate" },
+      { name: "Canva", level: "Expert" },
+      //{ name: "Wireframing", level: "Basic" },
+    ],
+  },
+  {
+    category: "Version Control & CI/CD",
+    skills: [
+      { name: "Git", level: "Intermediate" },
+      { name: "GitHub", level: "Advanced" },
+      { name: "Vercel", level: "Intermediate" },
+    ],
+  },
+];
+
+const levelColors = {
+  Expert: "bg-green-500 text-white",
+  Advanced: "bg-blue-500 text-white",
+  Intermediate: "bg-yellow-500 text-black",
+  Beginner: "bg-orange-500 text-black",
+  Basic: "bg-red-500 text-white",
+};
 
 const Skills = () => {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
   return (
     <div id="skills" className="pt-[5rem] pb-[3rem] bg-black">
-      <div className="grid w-[80%] mx-auto grid-cols-1 lg:grid-cols-7 gap-[2rem] items-center">
-        {/* Skills Introduction Section */}
-        <div className="col-span-3">
-          <h1 className="heading__primary">
-            Explore My Popular <span className="text-yellow-300">Skills</span> &
-            Expertise
-          </h1>
-          <p className="text-[15px] mb-[1.5rem] text-white opacity-70 mt-[1.5rem]">
-            With years of experience in web development and design, I have honed
-            my skills in modern technologies like React, JavaScript, and UI/UX
-            design. I have also collaborated on large-scale projects, delivering
-            user-centric solutions and enhancing performance.
-          </p>
-        </div>
+      <div className="w-[80%] mx-auto">
+        <h1 className="text-white text-4xl font-bold text-center">
+          My <span className="text-yellow-300">Skills</span> & Expertise
+        </h1>
+        <p className="text-gray-400 mt-3 text-lg text-center">
+          I specialize in frontend development, UI/UX design, and project
+          management. Below is a breakdown of my key skills.
+        </p>
 
-        {/* Skills Display Section */}
-        <div className="col-span-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-[1rem] items-center">
-            {/* Skill Cards */}
-            <SkillCard
-              title="React"
-              image="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-              percent="90%"
-            />
-            <SkillCard
-              title="JavaScript"
-              image="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-              percent="85%"
-            />
-            <SkillCard
-              title="UI/UX Design"
-              image="https://via.placeholder.com/150/00FF00/FFFFFF/?text=UIUX"
-              percent="80%"
-            />
-            <SkillCard
-              title="HTML/CSS"
-              image="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-              percent="95%"
-            />
-            <SkillCard
-              title="Python"
-              image="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-              percent="75%"
-            />
-            <SkillCard
-              title="Project Management"
-              image="https://cdn-icons-png.flaticon.com/512/1810/1810717.png"
-              percent="80%"
-            />
-            <SkillCard
-              title="Content Translation"
-              image="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"
-              percent="90%"
-            />
-            <SkillCard
-              title="Photography"
-              image="https://cdn-icons-png.flaticon.com/512/2921/2921822.png"
-              percent="85%"
-            />
-          </div>
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillsData.map((skillCategory, index) => (
+            <div
+              key={index}
+              className="bg-gray-800 p-6 rounded-xl shadow-md flex flex-col justify-between h-[270px]"
+            >
+              <h3 className="text-yellow-300 text-xl font-semibold text-center mb-2">
+                {skillCategory.category}
+              </h3>
+              <div className="space-y-2">
+                {skillCategory.skills.slice(0, 3).map((skill, i) => (
+                  <div key={i} className="flex items-center justify-between">
+                    <span className="text-white text-lg font-medium">
+                      {skill.name}
+                    </span>
+                    <span
+                      className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                        levelColors[skill.level]
+                      }`}
+                    >
+                      {skill.level}
+                    </span>
+                  </div>
+                ))}
+                {expandedIndex === index &&
+                  skillCategory.skills.slice(3).map((skill, i) => (
+                    <div key={i} className="flex items-center justify-between">
+                      <span className="text-white text-lg font-medium">
+                        {skill.name}
+                      </span>
+                      <span
+                        className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                          levelColors[skill.level]
+                        }`}
+                      >
+                        {skill.level}
+                      </span>
+                    </div>
+                  ))}
+              </div>
+
+              <button
+                onClick={() =>
+                  setExpandedIndex(expandedIndex === index ? null : index)
+                }
+                className="text-sm text-blue-400 mt-4 underline self-center hover:text-blue-300 transition-all"
+              >
+                {expandedIndex === index ? "Show Less" : "Read More"}
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </div>
