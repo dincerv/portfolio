@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 
-const skillsData = [
+type SkillLevel = "Expert" | "Advanced" | "Intermediate" | "Beginner" | "Basic";
+
+interface Skill {
+  name: string;
+  level: SkillLevel;
+}
+
+interface SkillCategory {
+  category: string;
+  skills: Skill[];
+}
+
+const skillsData: SkillCategory[] = [
   {
     category: "Frontend Development",
     skills: [
@@ -21,23 +33,12 @@ const skillsData = [
       { name: "PHP", level: "Beginner" },
     ],
   },
-  /*{
-    category: "Project Management & Agile",
-    skills: [
-      { name: "Agile Methodologies", level: "Expert" },
-      { name: "Scrum", level: "Advanced" },
-      { name: "Jira", level: "Intermediate" },
-      { name: "Trello", level: "Intermediate" },
-      { name: "Monday", level: "Basic" },
-    ],
-  },*/
   {
     category: "Design & Prototyping",
     skills: [
       { name: "Figma", level: "Advanced" },
       { name: "Adobe Photoshop", level: "Intermediate" },
       { name: "Canva", level: "Expert" },
-      //{ name: "Wireframing", level: "Basic" },
     ],
   },
   {
@@ -50,7 +51,7 @@ const skillsData = [
   },
 ];
 
-const levelColors = {
+const levelColors: Record<SkillLevel, string> = {
   Expert: "bg-green-500 text-white",
   Advanced: "bg-blue-500 text-white",
   Intermediate: "bg-yellow-500 text-black",
@@ -58,8 +59,8 @@ const levelColors = {
   Basic: "bg-red-500 text-white",
 };
 
-const Skills = () => {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+const Skills: React.FC = () => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
     <div id="skills" className="pt-[5rem] pb-[3rem] bg-black">
@@ -89,7 +90,7 @@ const Skills = () => {
                     </span>
                     <span
                       className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                        levelColors[skill.level]
+                        levelColors[skill.level as keyof typeof levelColors]
                       }`}
                     >
                       {skill.level}
@@ -104,7 +105,7 @@ const Skills = () => {
                       </span>
                       <span
                         className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                          levelColors[skill.level]
+                          levelColors[skill.level as keyof typeof levelColors]
                         }`}
                       >
                         {skill.level}
@@ -113,14 +114,16 @@ const Skills = () => {
                   ))}
               </div>
 
-              <button
-                onClick={() =>
-                  setExpandedIndex(expandedIndex === index ? null : index)
-                }
-                className="text-sm text-blue-400 mt-4 underline self-center hover:text-blue-300 transition-all"
-              >
-                {expandedIndex === index ? "Show Less" : "Read More"}
-              </button>
+              {skillCategory.skills.length > 3 && (
+                <button
+                  onClick={() =>
+                    setExpandedIndex(expandedIndex === index ? null : index)
+                  }
+                  className="text-sm text-blue-400 mt-4 underline self-center hover:text-blue-300 transition-all"
+                >
+                  {expandedIndex === index ? "Show Less" : "Read More"}
+                </button>
+              )}
             </div>
           ))}
         </div>
